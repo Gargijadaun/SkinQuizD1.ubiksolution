@@ -1388,29 +1388,6 @@ self.C3_ExpressionFuncs = [
 			return () => Math.ceil(((v0.GetValue() * 100) / 18));
 		},
 		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpObject("player_id");
-		},
-		() => "Content-Type",
-		() => "application/json",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			return () => ((and("Sending score: ", v0.GetValue()) + " email: ") + v1.GetValue());
-		},
-		() => "save",
-		() => "https://ubikback-production.up.railway.app/game1/doctor1/save_score",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			return () => (and((((((("{" + "\"player_id\"") + ":") + v0.GetValue()) + ",") + "\"score\"") + ":"), v1.GetValue()) + "}");
-		},
-		() => "PATCH",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => ("Data" + f0());
-		},
-		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ((v0.GetValue()) < (8.4) ? 1 : 0);
 		},
@@ -1437,6 +1414,35 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => ("0" + n0.ExpObject());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("player_id");
+		},
+		() => "Content-Type",
+		() => "application/json",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((and("Sending score: ", v0.GetValue()) + " email: ") + v1.GetValue());
+		},
+		() => "save",
+		() => "https://ubikback-production.up.railway.app/game1/doctor1/save_score",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => (and((and((((((("{" + "\"player_id\"") + ":") + v0.GetValue()) + ",") + "\"score\"") + ":"), v1.GetValue()) + ",\"discount\":"), v2.GetValue()) + "}");
+		},
+		() => "PATCH",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			return () => and((and("Sending score: ", v0.GetValue()) + " discount: "), v1.GetValue());
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => ("Data" + f0());
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -1500,7 +1506,7 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => f0(n1.ExpObject(), "[^0-9]", "", "");
 		},
-		() => "^[\\w.-]+@[\\w.-]+\\.\\w+$",
+		() => "^[a-zA-Z0-9._%+-]+@(gmail\\.com|metaverse911\\.rs|business\\.org|yahoo\\.com|ubiksolutionspvtltd\\.com|xs-worldwide\\.com|xsproductions\\.com|outlook\\.com|ethicare\\.in|123mail\\.org|126\\.com|139\\.com|150mail\\.com|150ml\\.com|163\\.com|16mail\\.com|2-mail\\.com|420blaze\\.it|4email\\.net|50mail\\.com|8chan\\.co|aaathats3as\\.com|airmail\\.cc|airpost\\.net|airsi\\.de|allmail\\.net|antichef\\.com|antichef\\.net|bestmail\\.us|bluewin\\.ch|c2\\.hu|cluemail\\.com|cocaine\\.ninja|cock\\.email|cock\\.li|cock\\.lu|cumallover\\.me|dfgh\\.net|dicksinhisan\\.us|dicksinmyan\\.us|elitemail\\.org|emailcorner\\.net|emailengine\\.net|emailengine\\.org|emailgroups\\.net|emailplus\\.org|emailuser\\.net|eml\\.cc|f-m\\.fm|fast-email\\.com|fast-mail\\.org|fastem\\.com|fastemail\\.us|fastemailer\\.com|fastest\\.cc|fastimap\\.com|fastmail\\.cn|fastmail\\.co\\.uk|fastmail\\.com|fastmail\\.com\\.au|fastmail\\.es|fastmail\\.fm|fastmail\\.im|fastmail\\.in|fastmail\\.jp|fastmail\\.mx|fastmail\\.net|fastmail\\.nl|fastmail\\.se|fastmail\\.to|fastmail\\.tw|fastmail\\.uk|fastmail\\.us|fastmailbox\\.net|fastmessaging\\.com|fea\\.st|firemail\\.cc|fmail\\.co\\.uk|fmailbox\\.com|fmgirl\\.com|fmguy\\.com|freemail\\.hu|ftml\\.net|getbackinthe\\.kitchen|gmx\\.com|gmx\\.us|goat\\.si|h-mail\\.us|hailmail\\.net|hitler\\.rocks|horsefucker\\.org|hush\\.ai|hush\\.com|hushmail\\.com|hushmail\\.me|imap-mail\\.com|imap\\.cc|imapmail\\.org|inoutbox\\.com|internet-e-mail\\.com|internet-mail\\.org|internetemails\\.net|internetmailing\\.net|jetemail\\.net|justemail\\.net|kakao\\.com|kennedy808\\.com|letterboxes\\.org|liamekaens\\.com|mail-central\\.com|mail-page\\.com|mail2world\\.com|mailandftp\\.com|mailas\\.com|mailbolt\\.com|mailc\\.net|mailcan\\.com|mailforce\\.net|mailftp\\.com|mailhaven\\.com|mailingaddress\\.org|mailite\\.com|mailmight\\.com|mailnew\\.com|mailsent\\.net|mailservice\\.ms|mailup\\.net|mailworks\\.org|memeware\\.net|ml1\\.net|mm\\.st|mozmail\\.com|myfastmail\\.com|mymacmail\\.com|naver\\.com|neverbox\\.com|nigge\\.rs|nospammail\\.net|nus\\.edu\\.sg|onet\\.pl|ownmail\\.net|petml\\.com|postinbox\\.com|postpro\\.net|proinbox\\.com|promessage\\.com|qq\\.com|realemail\\.net|reallyfast\\.biz|reallyfast\\.info|recursor\\.net|redchan\\.it|ruffrey\\.com|rushpost\\.com|safe-mail\\.net|sent\\.as|sent\\.at|sent\\.com|shitposting\\.agency|shitware\\.nl|sibmail\\.com|sneakemail\\.com|snkmail\\.com|snkml\\.com|spamcannon\\.com|spamcannon\\.net|spamgourmet\\.com|spamgourmet\\.net|spamgourmet\\.org|speedpost\\.net|speedymail\\.org|ssl-mail\\.com|swift-mail\\.com|tfwno\\.gf|the-fastest\\.net|the-quickest\\.com|theinternetemail\\.com|tweakly\\.net|ubicloud\\.com|veryfast\\.biz|veryspeedy\\.net|vfemail\\.net|waifu\\.club|warpmail\\.net|xmail\\.com|xoxy\\.net|xsmail\\.com|xwaretech\\.com|xwaretech\\.info|xwaretech\\.net|yahoo\\.com\\.ph|yahoo\\.com\\.vn|yeah\\.net|yepmail\\.net|your-mail\\.com\n)$",
 		() => "i",
 		() => "BEGIN GAME",
 		() => -10,
